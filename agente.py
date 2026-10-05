@@ -21,7 +21,11 @@ MODELO = "openai/gpt-oss-20b"
 
 # 2. RESOLUÇÃO DE INTEGRAÇÃO - CONSUMO DA API DO BANCO CENTRAL DO BRASIL (SGS)
 def consultar_sgs_bacen(codigo_serie: int, data_inicio: str = "01/01/2026") -> str:
-    url = f"https://bcb.gov.br.{codigo_serie}/dados?formato=json&dataInicial={data_inicio}"
+    url = (
+        f"https://api.bcb.gov.br/dados/serie/"
+        f"bcdata.sgs.{codigo_serie}/dados"
+        f"?formato=json&dataInicial={data_inicio}"
+    )
     try:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
