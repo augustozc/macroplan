@@ -6,7 +6,7 @@ import requests
 
 
 SGS_URL = "https://api.bcb.gov.br/dados/serie/bcdata.sgs.{serie}/dados"
-SALDO_INICIAL = 860_000.00
+SALDO_INICIAL = 429_000.00
 RETIRADA_MENSAL = 11_000.00
 PRAZO_MESES = 36
 
